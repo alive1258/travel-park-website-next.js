@@ -1,0 +1,148 @@
+export interface TourPackage {
+  slug: string;
+  name: string;
+  tagline: string;
+  region: string;
+  category: string;
+  duration: string;
+  guests: string;
+  price: number;
+  image: string;
+}
+
+export const TOUR_REGIONS = ["Asia", "Europe", "Americas"];
+
+export const TOUR_PACKAGES: TourPackage[] = [
+  {
+    slug: "railay-beach-adventure",
+    name: "Railay Beach Adventure",
+    tagline: "Cliffside beaches reachable only by boat",
+    region: "Asia",
+    category: "Beach",
+    duration: "4 Days",
+    guests: "2-6 Guests",
+    price: 499,
+    image: "/images/thailand-railay-beach-boats.jpg",
+  },
+  {
+    slug: "lake-como-lakeside-escape",
+    name: "Lake Como Lakeside Escape",
+    tagline: "Pastel villages and quiet lakeside villas",
+    region: "Europe",
+    category: "Honeymoon",
+    duration: "5 Days",
+    guests: "2 Guests",
+    price: 899,
+    image: "/images/lake-como-varenna-waterfront.jpg",
+  },
+  {
+    slug: "istanbul-city-bosphorus-cruise",
+    name: "Istanbul City & Bosphorus Cruise",
+    tagline: "Domes, bazaars, and a sunset ferry ride",
+    region: "Europe",
+    category: "City",
+    duration: "3 Days",
+    guests: "2-8 Guests",
+    price: 459,
+    image: "/images/istanbul-mosque-ferries.jpg",
+  },
+  {
+    slug: "lake-louise-alpine-tour",
+    name: "Lake Louise Alpine Tour",
+    tagline: "Glacier lakes and Rockies day hikes",
+    region: "Americas",
+    category: "Adventure",
+    duration: "6 Days",
+    guests: "2-4 Guests",
+    price: 1099,
+    image: "/images/lake-louise-canada.jpg",
+  },
+  {
+    slug: "rovinj-coastal-sailing",
+    name: "Rovinj Coastal Sailing",
+    tagline: "Adriatic coves and old-town harbors",
+    region: "Europe",
+    category: "Cruise",
+    duration: "5 Days",
+    guests: "2-10 Guests",
+    price: 749,
+    image: "/images/rovinj-croatia-pier-girl.webp",
+  },
+  {
+    slug: "abu-dhabi-luxury-city-tour",
+    name: "Abu Dhabi Luxury City Tour",
+    tagline: "Skyline views and private beach clubs",
+    region: "Asia",
+    category: "City",
+    duration: "4 Days",
+    guests: "2-6 Guests",
+    price: 999,
+    image: "/images/abu-dhabi-skyline-aerial.jpg",
+  },
+  {
+    slug: "ha-giang-mountain-pass",
+    name: "Ha Giang Mountain Pass Ride",
+    tagline: "Switchback roads through terraced valleys",
+    region: "Asia",
+    category: "Adventure",
+    duration: "3 Days",
+    guests: "1-2 Guests",
+    price: 349,
+    image: "/images/ha-giang-vietnam-road.jpg",
+  },
+  {
+    slug: "na-pali-coast-boat-tour",
+    name: "Na Pali Coast Boat Tour",
+    tagline: "Emerald cliffs along Kauai's wild shore",
+    region: "Americas",
+    category: "Wildlife",
+    duration: "1 Day",
+    guests: "2-12 Guests",
+    price: 259,
+    image: "/images/na-pali-coast-hawaii-2.jpg",
+  },
+  {
+    slug: "everest-base-camp-trek",
+    name: "Everest Base Camp Trek",
+    tagline: "The classic Khumbu valley trekking route",
+    region: "Asia",
+    category: "Adventure",
+    duration: "12 Days",
+    guests: "1-8 Guests",
+    price: 1899,
+    image: "/images/nepal-everest-base-camp-trekker.jpg",
+  },
+  {
+    slug: "maya-bay-island-hopping",
+    name: "Maya Bay Island Hopping",
+    tagline: "Hidden coves by traditional longtail boat",
+    region: "Asia",
+    category: "Family",
+    duration: "2 Days",
+    guests: "2-8 Guests",
+    price: 329,
+    image: "/images/thailand-islands-longtail-boats.jpg",
+  },
+  {
+    slug: "costa-blanca-cove-sailing",
+    name: "Costa Blanca Cove Sailing",
+    tagline: "Quiet coves along Spain's sunniest coast",
+    region: "Europe",
+    category: "Cruise",
+    duration: "4 Days",
+    guests: "2-10 Guests",
+    price: 679,
+    image: "/images/mediterranean-cove-boats.jpg",
+  },
+  {
+    slug: "lake-garda-family-getaway",
+    name: "Lake Garda Family Getaway",
+    tagline: "Lemon groves and medieval lakeside towns",
+    region: "Europe",
+    category: "Family",
+    duration: "5 Days",
+    guests: "2-6 Guests",
+    price: 589,
+    image: "/images/italian-lakeside-town.jpg",
+  },
+];

@@ -1,0 +1,201 @@
+/* Tailwind import MUST be first */
+@import "tailwindcss";
+
+/* ================= BRAND THEME (Travelpark) =================
+   Single-hue system anchored on #d13e00 — every "color" utility across
+   the app (brand-*, gold-*, accent-*) resolves into this one red-orange
+   family plus near-black/white neutrals. Nothing else. */
+@theme {
+  --color-brand-50: #fdf1ec;
+  --color-brand-100: #fbdfd2;
+  --color-brand-200: #f6bda3;
+  --color-brand-300: #ef9670;
+  --color-brand-400: #e56a3d;
+  --color-brand-500: #d94f1a;
+  --color-brand-600: #d13e00;
+  --color-brand-700: #a83200;
+  --color-brand-800: #5c1c00;
+  --color-brand-900: #0d0d0d;
+
+  --color-gold-400: #e56a3d;
+  --color-gold-500: #d13e00;
+  --color-gold-600: #a83200;
+
+  /* Button accent — every solid CTA/button across the site uses this. */
+  --color-accent-400: #e56a3d;
+  --color-accent-500: #d13e00;
+  --color-accent-600: #a83200;
+
+  --font-script: var(--font-caveat), cursive;
+}
+
+/* ================= ROOT THEME ================= */
+:root {
+  --background: #ffffff;
+  --foreground: #0d0d0d;
+  --border-color: #333;
+  --border-color-hover: #444;
+  --primary: #d13e00;
+
+  --card-gradient: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(17, 17, 17, 0.5) 50%,
+    #111 100%
+  );
+}
+
+/* ================= BASE STYLES ================= */
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* ================= LAYERS ================= */
+@layer base {
+  .container {
+    @apply max-w-[1440px] w-full mx-auto px-5 md:px-20;
+  }
+
+  .btn-n {
+    @apply flex items-center justify-center py-2 px-4 rounded-lg font-medium text-[16px]
+    cursor-pointer transition-all duration-300 text-[#A1A4A5]
+    bg-[#0A0A0A] hover:text-black hover:bg-[#FAFAFA];
+  }
+
+  .btn-l {
+    @apply flex items-center justify-center py-2 px-4 rounded-full font-medium text-[16px] text-white;
+    background: linear-gradient(135deg, #2c1b61 0%, #6d28d9 100%);
+  }
+
+  .paragraph {
+    @apply text-[#A1A4A5] text-center text-base font-medium leading-6 max-w-3xl mx-auto;
+  }
+
+  .heading {
+    @apply text-center font-medium md:text-[48px] text-3xl font-sans text-transparent bg-clip-text;
+    background-image: linear-gradient(180deg, #000 20%, #555 90%);
+  }
+}
+
+/* ================= CARD ================= */
+.gradient-card {
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  background: var(--card-gradient);
+  transition: all 0.3s ease;
+}
+
+.gradient-card:hover {
+  border-color: var(--border-color-hover);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= UTILITIES ================= */
+@layer utilities {
+  .spin-btn {
+    position: relative;
+    overflow: hidden;
+    border-radius: 9999px;
+  }
+
+  .spin-btn::before {
+    content: "";
+    position: absolute;
+    inset: -120%;
+    background: conic-gradient(from 0deg, #a78bfa 60deg, transparent 90deg);
+    animation: spin 2s linear infinite;
+  }
+
+  .spin-btn::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: linear-gradient(to right, #371796, #6d28d9);
+    border-radius: 9999px;
+  }
+
+  .spin-btn span {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* ================= ANIMATION ================= */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================= RESPONSIVE SAFETY ================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* her merquery  */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 75s linear infinite;
+}
+
+/* ================= TESTIMONIALS MARQUEE ================= */
+@keyframes testimonial-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes testimonial-scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-testimonial-left {
+  animation: testimonial-scroll-left 55s linear infinite;
+}
+
+.animate-testimonial-right {
+  animation: testimonial-scroll-right 55s linear infinite;
+}
+
+.animate-testimonial-left:hover,
+.animate-testimonial-right:hover {
+  animation-play-state: paused;
+}
+
+.testimonial-fade {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+}
